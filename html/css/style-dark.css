@@ -1009,6 +1009,12 @@ header .header-mobile .header-toggle i {
     font-weight: 700;
 }
 
+.about-section .about .external-link-icon {
+    font-size: .7em;
+    margin-left: 3px;
+    vertical-align: super;
+}
+
 .about-section .about .signature {
     width: 50%;
 }
