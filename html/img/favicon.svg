@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="JCS">
+    <rect width="64" height="64" rx="12" fill="#17181b"/>
+    <rect x="7" y="7" width="50" height="50" rx="9" fill="none" stroke="#2f80ed" stroke-width="3"/>
+    <text x="32" y="39" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="700" fill="#ffffff">JCS</text>
+</svg>
