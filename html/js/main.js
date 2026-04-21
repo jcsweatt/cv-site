@@ -306,7 +306,6 @@ function contactFormSetup() {
 
 
     $('#contact-form').on('submit', function(e) {
-        e.preventDefault();
         var name = $('#cf-name').val(),
             email = $('#cf-email').val(),
             message = $('#cf-message').val(),
@@ -328,6 +327,11 @@ function contactFormSetup() {
             }
         });
         if( required === 0 ) {
+            if($(this).attr('action') !== 'mail.php') {
+                return true;
+            }
+
+            e.preventDefault();
             $.ajax({
                 type: 'POST',
                 url: 'mail.php',
@@ -349,6 +353,8 @@ function contactFormSetup() {
                     showAlertBox(data.status, data.message);
                 }
             });
+        } else {
+            e.preventDefault();
         }
     });
 }
@@ -367,4 +373,3 @@ function showAlertBox(response, message) {
     }
     $alContainer.fadeIn(300).delay(4000).fadeOut(400);
 }
-

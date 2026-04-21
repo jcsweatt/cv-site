@@ -984,14 +984,17 @@
                                 </div>
 
                                 <!--Form Start-->
-                                <form id="contact-form" method="post" action="mail.php">
+                                <form id="contact-form" method="post" action="https://formsubmit.co/christian.sweatt@mac.com">
+                                    <input type="text" name="_honey" style="display: none;">
+                                    <input type="hidden" name="_subject" value="New message from christian-sweatt.com">
+                                    <input type="hidden" name="_template" value="table">
                                     <div class="row">
 
 
                                         <!--Name Field-->
                                         <div class="col-md-6 mb-50">
                                             <span class="input">
-                                                <input class="input__field cf-validate" type="text" id="cf-name" name="name" />
+                                                <input class="input__field cf-validate" type="text" id="cf-name" name="name" required />
                                                 <label class="input__label" for="cf-name">Name</label>
                                             </span>
                                         </div>
@@ -999,7 +1002,7 @@
                                         <!--Email Field-->
                                         <div class="col-md-6 mb-50">
                                             <span class="input">
-                                                <input class="input__field cf-validate" type="text" id="cf-email" name="email" />
+                                                <input class="input__field cf-validate" type="email" id="cf-email" name="email" required />
                                                 <label class="input__label" for="cf-email">Email</label>
                                             </span>
                                         </div>
@@ -1007,7 +1010,7 @@
                                         <!--Message Box-->
                                         <div class="col-md-12 mb-30">
                                             <span class="input">
-                                                <textarea  class="input__field cf-validate" id="cf-message" name="message" rows="5" ></textarea>
+                                                <textarea class="input__field cf-validate" id="cf-message" name="message" rows="5" required></textarea>
                                                 <label class="input__label" for="cf-message">How can we help you?</label>
                                             </span>
                                         </div>
@@ -1031,21 +1034,9 @@
                         <div class="row contact-info mb-70">
 
                             <!--Contact Info Item-->
-                            <div class="col-md-4 info-item">
-                                <span class="icon"><i class="fas fa-paper-plane"></i></span>
-                                <h5><a href="mailto:example@example.com">example@example.com</a></h5>
-                            </div>
-
-                            <!--Contact Info Item-->
-                            <div class="col-md-4 info-item">
+                            <div class="col-md-4 offset-md-4 info-item">
                                 <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
                                 <h5>Walnut Creek, CA</h5>
-                            </div>
-
-                            <!--Contact Info Item-->
-                            <div class="col-md-4 info-item">
-                                <span class="icon"><i class="fas fa-phone"></i></span>
-                                <h5>(+1) 123 456 7890</h5>
                             </div>
 
                         </div>
