@@ -6,6 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="dark light" />
         <meta name="keywords" content="vcard, resume, personal, portfolio, cv, card, responsive" />
         <meta name="description" content="vCard / Resume / Personal / Portfolio Template" />
         <meta name="author" content="cosmos-themes" />
@@ -16,9 +17,34 @@
         <!--Plugins Css-->
         <link rel="stylesheet" href="css/plugins.css">
         <!--Main Styles Css-->
-        <link rel="stylesheet" href="css/style-dark.css">
+        <link id="theme-style" rel="stylesheet" href="css/style-dark.css">
         <!--Color Css-->
         <link rel="stylesheet" href="css/blue-color.css">
+
+        <!--Theme Css-->
+        <script>
+            (function() {
+                var mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+
+                function applyTheme(event) {
+                    var isLight = event.matches;
+                    var themeStyle = document.getElementById('theme-style');
+                    var signature = document.getElementById('signature-image');
+
+                    themeStyle.setAttribute('href', isLight ? 'css/style-light.css' : 'css/style-dark.css');
+
+                    if (signature) {
+                        signature.setAttribute('src', isLight ? 'img/signature-black.png' : 'img/signature-white.png');
+                    }
+                }
+
+                applyTheme(mediaQuery);
+                document.addEventListener('DOMContentLoaded', function() {
+                    applyTheme(mediaQuery);
+                });
+                mediaQuery.addEventListener('change', applyTheme);
+            }());
+        </script>
 
         <!--Modernizr Js-->
         <script src="js/modernizr.js"></script>
@@ -149,7 +175,7 @@
 
                                 <!--Signature Image-->
                                 <div class="signature mt-20">
-                                    <img src="img/signature-white.png" alt="">
+                                    <img id="signature-image" src="img/signature-white.png" alt="">
                                 </div>
                             </div>
 

@@ -713,7 +713,7 @@ blockquote {
     top: 0;
     height: 100%;
     z-index: 300;
-    width: 200px;
+    width: 250px;
     background-color: #2a2b30;
     overflow: auto;
     left: 0;
@@ -865,7 +865,7 @@ header .header-mobile .header-toggle i {
 .site-main {
     position: absolute;
     top: 0;
-    left: 200px;
+    left: 250px;
     right: 0;
     width: auto;
     height: 100%;
@@ -1516,6 +1516,12 @@ header .header-mobile .header-toggle i {
     height: 200px;
 }
 
+.contact-section .contact-map {
+    width: 100%;
+    height: 200px;
+    border: 0;
+}
+
 .contact-section .contact-info {
     text-align: center;
 }
@@ -1799,7 +1805,7 @@ header .header-mobile .header-toggle i {
 
 @media screen and (max-width: 767px) {
     header .header-main {
-        left: -200px;
+        left: -250px;
         -webkit-transition: all .3s ease-in-out;
         -o-transition: all .3s ease-in-out;
         transition: all .3s ease-in-out;
