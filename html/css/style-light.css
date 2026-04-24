@@ -726,6 +726,9 @@ blockquote {
 
 .header-main .image-container {
     position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: #e6e6e6;
 }
 
 .header-main .image-container img {
@@ -913,6 +916,8 @@ header .header-mobile .header-toggle i {
 /*============ 4. Banner Section ============*/
 
 .banner-section {
+    position: relative;
+    min-height: 100%;
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center;
@@ -934,6 +939,7 @@ header .header-mobile .header-toggle i {
     position: absolute;
     top: 50%;
     width: 100%;
+    padding: 0 24px;
     text-align: center;
     display: block;
     -webkit-transform: translateY(-50%);
@@ -955,6 +961,15 @@ header .header-mobile .header-toggle i {
 
 .banner-section .banner-content p {
     font-size: 28px;
+}
+
+.banner-section .banner-content p.cd-headline {
+    min-height: 1.6em;
+}
+
+.banner-section .banner-content p .cd-words-wrapper {
+    min-width: 20ch;
+    text-align: left;
 }
 
 .banner-section .banner-content p .cd-words-wrapper:after {
@@ -1844,6 +1859,10 @@ header .header-mobile .header-toggle i {
     }
     .banner-section .banner-content p.cd-headline {
         font-size: 22px;
+        min-height: 1.8em;
+    }
+    .banner-section .banner-content p .cd-words-wrapper {
+        min-width: 17ch;
     }
 }
 
