@@ -223,7 +223,8 @@ $(document).ready(function() {
 function initAnimatedHeadline() {
     var $headline = $('.cd-headline.clip'),
         animationDelay = 2500,
-        revealDuration = 600;
+        collapseDuration = 450,
+        revealDuration = 650;
 
     if(!$headline.length) {
         return;
@@ -242,25 +243,28 @@ function initAnimatedHeadline() {
             $visibleWord = $words.first().addClass('is-visible');
         }
 
-        $wordsWrapper.width($visibleWord.width());
+        $wordsWrapper.css({
+            minWidth: 0,
+            width: $visibleWord.outerWidth()
+        });
 
         setTimeout(function() {
-            cycleHeadlineWord($wordsWrapper, $words, revealDuration, animationDelay);
+            cycleHeadlineWord($wordsWrapper, $words, collapseDuration, revealDuration, animationDelay);
         }, animationDelay);
     });
 }
 
-function cycleHeadlineWord($wordsWrapper, $words, revealDuration, animationDelay) {
+function cycleHeadlineWord($wordsWrapper, $words, collapseDuration, revealDuration, animationDelay) {
     var $visibleWord = $words.filter('.is-visible').first(),
         $nextWord = $visibleWord.next('b').length ? $visibleWord.next('b') : $words.first();
 
-    $wordsWrapper.animate({ width: 2 }, revealDuration, function() {
+    $wordsWrapper.stop(true, true).animate({ width: 0 }, collapseDuration, function() {
         $visibleWord.removeClass('is-visible');
         $nextWord.addClass('is-visible');
 
-        $wordsWrapper.animate({ width: $nextWord.width() }, revealDuration, function() {
+        $wordsWrapper.animate({ width: $nextWord.outerWidth() }, revealDuration, function() {
             setTimeout(function() {
-                cycleHeadlineWord($wordsWrapper, $words, revealDuration, animationDelay);
+                cycleHeadlineWord($wordsWrapper, $words, collapseDuration, revealDuration, animationDelay);
             }, animationDelay);
         });
     });

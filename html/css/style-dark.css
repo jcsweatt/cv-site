@@ -972,7 +972,6 @@ header .header-mobile .header-toggle i {
 }
 
 .banner-section .banner-content p .cd-words-wrapper {
-    min-width: 20ch;
     text-align: left;
 }
 
@@ -1872,9 +1871,6 @@ header .header-mobile .header-toggle i {
     .banner-section .banner-content p.cd-headline {
         font-size: 22px;
         min-height: 1.8em;
-    }
-    .banner-section .banner-content p .cd-words-wrapper {
-        min-width: 17ch;
     }
 }
 
