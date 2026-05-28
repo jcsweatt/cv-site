@@ -1009,6 +1009,7 @@ header .header-mobile .header-toggle i {
     height: 1.2em;
     min-height: 1.2em;
     line-height: 1.2;
+    border-bottom: 2px solid #fff;
 }
 
 .cv-headline .cd-words-wrapper::after {
@@ -1029,6 +1030,7 @@ header .header-mobile .header-toggle i {
     top: 0;
     line-height: 1.2;
     opacity: 0;
+    border-bottom: 0;
 }
 
 .cv-headline b.is-visible {
