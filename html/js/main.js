@@ -223,7 +223,8 @@ $(document).ready(function() {
 function initAnimatedHeadline() {
     var $headline = $('.cv-headline'),
         animationDelay = 2500,
-        collapseDuration = 650;
+        collapseDuration = 650,
+        revealDuration = 650;
 
     if(!$headline.length) {
         return;
@@ -257,23 +258,24 @@ function initAnimatedHeadline() {
         });
 
         setTimeout(function() {
-            cycleHeadlineWord($wordsWrapper, $words, collapseDuration, animationDelay);
+            cycleHeadlineWord($wordsWrapper, $words, collapseDuration, revealDuration, animationDelay);
         }, animationDelay);
     });
 }
 
-function cycleHeadlineWord($wordsWrapper, $words, collapseDuration, animationDelay) {
+function cycleHeadlineWord($wordsWrapper, $words, collapseDuration, revealDuration, animationDelay) {
     var $visibleWord = $words.filter('.is-visible').first(),
         $nextWord = $visibleWord.next('b').length ? $visibleWord.next('b') : $words.first();
 
     $wordsWrapper.stop(true, true).animate({ width: 0 }, collapseDuration, function() {
         $visibleWord.removeClass('is-visible').hide();
         $nextWord.addClass('is-visible').show();
-        $wordsWrapper.width($nextWord.outerWidth());
 
-        setTimeout(function() {
-            cycleHeadlineWord($wordsWrapper, $words, collapseDuration, animationDelay);
-        }, animationDelay);
+        $wordsWrapper.animate({ width: $nextWord.outerWidth() }, revealDuration, function() {
+            setTimeout(function() {
+                cycleHeadlineWord($wordsWrapper, $words, collapseDuration, revealDuration, animationDelay);
+            }, animationDelay);
+        });
     });
 }
 

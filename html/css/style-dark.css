@@ -990,13 +990,18 @@ header .header-mobile .header-toggle i {
     border-bottom: 2px solid #fff;
 }
 
-.cv-headline {
+.banner-section .banner-content p.cv-headline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: .25em;
     line-height: 1.2;
 }
 
 .cv-headline span {
     display: inline-block;
-    padding: .2em 0;
+    padding: 0;
 }
 
 .cv-headline .cd-words-wrapper {
@@ -1004,7 +1009,10 @@ header .header-mobile .header-toggle i {
     position: relative;
     text-align: left;
     overflow: hidden;
-    vertical-align: top;
+    vertical-align: middle;
+    height: 1.2em;
+    min-height: 1.2em;
+    line-height: 1.2;
 }
 
 .cv-headline .cd-words-wrapper::after {
@@ -1023,12 +1031,13 @@ header .header-mobile .header-toggle i {
     white-space: nowrap;
     left: 0;
     top: 0;
+    line-height: 1.2;
     opacity: 0;
 }
 
 .cv-headline b.is-visible {
     display: inline-block;
-    position: relative;
+    position: absolute;
     opacity: 1;
 }
 

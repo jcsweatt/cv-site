@@ -963,12 +963,12 @@ header .header-mobile .header-toggle i {
     font-size: 28px;
 }
 
-.banner-section .banner-content p.cd-headline {
+.banner-section .banner-content p.cd-headline,
+.banner-section .banner-content p.cv-headline {
     min-height: 1.6em;
 }
 
 .banner-section .banner-content p .cd-words-wrapper {
-    min-width: 20ch;
     text-align: left;
 }
 
@@ -984,6 +984,57 @@ header .header-mobile .header-toggle i {
 .banner-section .banner-content p .cd-words-wrapper b {
     font-weight: 700;
     border-bottom: 2px solid #fff;
+}
+
+.banner-section .banner-content p.cv-headline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: .25em;
+    line-height: 1.2;
+}
+
+.cv-headline span {
+    display: inline-block;
+    padding: 0;
+}
+
+.cv-headline .cd-words-wrapper {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    overflow: hidden;
+    vertical-align: middle;
+    height: 1.2em;
+    min-height: 1.2em;
+    line-height: 1.2;
+}
+
+.cv-headline .cd-words-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #aebcb9;
+}
+
+.cv-headline b {
+    display: none;
+    position: absolute;
+    white-space: nowrap;
+    left: 0;
+    top: 0;
+    line-height: 1.2;
+    opacity: 0;
+}
+
+.cv-headline b.is-visible {
+    display: inline-block;
+    position: absolute;
+    opacity: 1;
 }
 
 .banner-section #video-container {
@@ -1857,12 +1908,10 @@ header .header-mobile .header-toggle i {
     .banner-section .banner-content h1 {
         font-size: 50px;
     }
-    .banner-section .banner-content p.cd-headline {
+    .banner-section .banner-content p.cd-headline,
+    .banner-section .banner-content p.cv-headline {
         font-size: 22px;
         min-height: 1.8em;
-    }
-    .banner-section .banner-content p .cd-words-wrapper {
-        min-width: 17ch;
     }
 }
 
