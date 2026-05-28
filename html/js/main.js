@@ -75,6 +75,9 @@ $(document).ready(function() {
         minSize: 10
     });
 
+    /*======== Animated Headline Setup ========*/
+    initAnimatedHeadline();
+
     /*======== Active Current Link ========*/
     $('.nav-menu a').on('click',function() {
         if($('.header-content.on').length) {
@@ -216,6 +219,52 @@ $(document).ready(function() {
     /*======== Contact Form Setup ========*/
     contactFormSetup();
 });
+
+function initAnimatedHeadline() {
+    var $headline = $('.cd-headline.clip'),
+        animationDelay = 2500,
+        revealDuration = 600;
+
+    if(!$headline.length) {
+        return;
+    }
+
+    $headline.each(function() {
+        var $wordsWrapper = $(this).find('.cd-words-wrapper'),
+            $words = $wordsWrapper.children('b'),
+            $visibleWord = $words.filter('.is-visible').first();
+
+        if($words.length < 2) {
+            return;
+        }
+
+        if(!$visibleWord.length) {
+            $visibleWord = $words.first().addClass('is-visible');
+        }
+
+        $wordsWrapper.width($visibleWord.width());
+
+        setTimeout(function() {
+            cycleHeadlineWord($wordsWrapper, $words, revealDuration, animationDelay);
+        }, animationDelay);
+    });
+}
+
+function cycleHeadlineWord($wordsWrapper, $words, revealDuration, animationDelay) {
+    var $visibleWord = $words.filter('.is-visible').first(),
+        $nextWord = $visibleWord.next('b').length ? $visibleWord.next('b') : $words.first();
+
+    $wordsWrapper.animate({ width: 2 }, revealDuration, function() {
+        $visibleWord.removeClass('is-visible');
+        $nextWord.addClass('is-visible');
+
+        $wordsWrapper.animate({ width: $nextWord.width() }, revealDuration, function() {
+            setTimeout(function() {
+                cycleHeadlineWord($wordsWrapper, $words, revealDuration, animationDelay);
+            }, animationDelay);
+        });
+    });
+}
 
 
 /*********** Function Ajax Portfolio Setup **********/
