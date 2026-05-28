@@ -1018,7 +1018,7 @@ header .header-mobile .header-toggle i {
 }
 
 .cv-headline b {
-    display: inline-block;
+    display: none;
     position: absolute;
     white-space: nowrap;
     left: 0;
@@ -1027,6 +1027,7 @@ header .header-mobile .header-toggle i {
 }
 
 .cv-headline b.is-visible {
+    display: inline-block;
     position: relative;
     opacity: 1;
 }

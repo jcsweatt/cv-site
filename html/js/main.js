@@ -248,6 +248,9 @@ function initAnimatedHeadline() {
             $visibleWord = $words.first().addClass('is-visible');
         }
 
+        $words.not($visibleWord).hide();
+        $visibleWord.show();
+
         $wordsWrapper.css({
             minWidth: 0,
             width: $visibleWord.outerWidth()
@@ -264,8 +267,8 @@ function cycleHeadlineWord($wordsWrapper, $words, collapseDuration, animationDel
         $nextWord = $visibleWord.next('b').length ? $visibleWord.next('b') : $words.first();
 
     $wordsWrapper.stop(true, true).animate({ width: 0 }, collapseDuration, function() {
-        $visibleWord.removeClass('is-visible');
-        $nextWord.addClass('is-visible');
+        $visibleWord.removeClass('is-visible').hide();
+        $nextWord.addClass('is-visible').show();
         $wordsWrapper.width($nextWord.outerWidth());
 
         setTimeout(function() {
